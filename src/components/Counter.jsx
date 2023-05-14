@@ -1,8 +1,4 @@
-import { useState } from "preact/hooks";
-
-const Counter = () => {
-  const [value, setValue] = useState(0);
-
+const Counter = ({ value, setValue }) => {
   return (
     <p>
       <div>Counter: {value}</div>
