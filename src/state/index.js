@@ -1,5 +1,6 @@
 import { fromJS } from "immutable";
 import { useState } from "preact/hooks";
+import { createContext } from "preact";
 import { getCounterValues, resetCounters, setCounterValue } from "./counters";
 
 export const useApplicationState = () => {
@@ -22,3 +23,5 @@ export const useApplicationState = () => {
     resetCounters: wrapMutation(resetCounters),
   };
 };
+
+export const ApplicationContext = createContext();
