@@ -1,4 +1,4 @@
-const Counter = ({ value, setValue }) => {
+export const Counter = ({ value, setValue }) => {
   return (
     <p>
       <div>Counter: {value}</div>

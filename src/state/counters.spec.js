@@ -1,5 +1,5 @@
 import { fromJS, List } from "immutable";
-import { getCounterValues, setCounterValue } from "./counters";
+import { getCounterValues, resetCounters, setCounterValue } from "./counters";
 
 describe("getCounterValues", () => {
   it("returns values as an array", () => {
@@ -19,5 +19,17 @@ describe("setCounterValue", () => {
       counters: [0, 1],
     });
     expect(setCounterValue(state, 1, 1)).toEqual(expected);
+  });
+});
+
+describe("resetCounters", () => {
+  it("it should set counters to 0", () => {
+    const state = fromJS({
+      counters: [1, 2, 3],
+    });
+    const expected = fromJS({
+      counters: [0, 0, 0],
+    });
+    expect(resetCounters(state)).toEqual(expected);
   });
 });
