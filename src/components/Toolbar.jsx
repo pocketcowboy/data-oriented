@@ -1,5 +1,5 @@
 import { useContext } from "preact/hooks";
-import { ApplicationContext } from "../state";
+import { ApplicationState } from "../state";
 
 export const Toolbar = ({ onResetCounters }) => (
   <footer>
@@ -8,6 +8,6 @@ export const Toolbar = ({ onResetCounters }) => (
 );
 
 export default () => {
-  const { resetCounters } = useContext(ApplicationContext);
+  const [, { resetCounters }] = useContext(ApplicationState);
   return <Toolbar onResetCounters={resetCounters} />;
 };

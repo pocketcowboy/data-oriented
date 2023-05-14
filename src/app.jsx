@@ -4,17 +4,15 @@ import Toolbar from "./components/Toolbar";
 import { useApplicationState, ApplicationContext } from "./state";
 
 export default () => {
-  const state = useApplicationState();
-  const { getCounterValues, setCounterValue } = state;
+  const app = useApplicationState();
+  const [state, { setCounterValue }] = app;
 
   return (
-    <ApplicationContext.Provider value={state}>
+    <ApplicationContext.Provider value={app}>
       <main>
-        {getCounterValues()
-          .toArray()
-          .map((value, idx) => (
-            <Counter value={value} setValue={setCounterValue.bind(null, idx)} />
-          ))}
+        {state.counters.map((value, idx) => (
+          <Counter value={value} setValue={setCounterValue.bind(null, idx)} />
+        ))}
         <Toolbar />
       </main>
     </ApplicationContext.Provider>

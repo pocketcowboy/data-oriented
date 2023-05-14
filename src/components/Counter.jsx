@@ -1,5 +1,3 @@
-import { ApplicationContext } from "../state";
-
 export const Counter = ({ value, setValue }) => {
   return (
     <p>
