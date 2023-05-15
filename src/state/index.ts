@@ -25,4 +25,5 @@ export const useApplicationState = () => {
   ] as const;
 };
 
-export const ApplicationState = createContext({});
+export const ApplicationState =
+  createContext<ReturnType<typeof useApplicationState>>(undefined);

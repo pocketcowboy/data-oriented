@@ -1,9 +1,9 @@
 import { useContext } from "preact/hooks";
 import { ApplicationState } from "../state";
 
-export const Toolbar = ({ onResetCounters }) => (
+export const Toolbar = ({ onResetCounters }: { onResetCounters(): void }) => (
   <footer>
-    <button onclick={onResetCounters}>Reset counters</button>
+    <button onClick={onResetCounters}>Reset counters</button>
   </footer>
 );
 

@@ -1,4 +1,10 @@
-export const Counter = ({ value, setValue }) => {
+export const Counter = ({
+  value,
+  setValue,
+}: {
+  value: number;
+  setValue(value: number): void;
+}) => {
   return (
     <p>
       <div>Counter: {value}</div>
