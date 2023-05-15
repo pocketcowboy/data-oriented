@@ -12,11 +12,9 @@ export const useApplicationState = () => {
   });
 
   const wrapMutation =
-    (fn) =>
-    (...args) =>
+    <U extends any[]>(fn: (state: State, ...args: U) => State) =>
+    (...args: U) =>
       setState(fn(state, ...args));
-
-  const wrapQuery = (fn) => fn.bind(null, state);
 
   return [
     state,
