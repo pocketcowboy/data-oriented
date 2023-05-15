@@ -1,3 +1,14 @@
 body {
   font-family: sans-serif;
 }
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 4rem;
+}
+
+footer > * {
+  margin-right: 0.5rem;
+}

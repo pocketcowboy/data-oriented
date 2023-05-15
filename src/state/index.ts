@@ -1,9 +1,11 @@
 import { useState } from "preact/hooks";
 import { createContext } from "preact";
 import { resetCounters, setCounterValue } from "./counters";
+import { setEpochTime } from "./epochTime";
 
 export type State = {
   counters: number[];
+  epochTime?: number;
 };
 
 export const useApplicationState = () => {
@@ -21,6 +23,7 @@ export const useApplicationState = () => {
     {
       setCounterValue: wrapMutation(setCounterValue),
       resetCounters: wrapMutation(resetCounters),
+      setEpochTime: wrapMutation(setEpochTime),
     },
   ] as const;
 };
