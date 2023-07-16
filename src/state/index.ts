@@ -13,10 +13,10 @@ export const useApplicationState = () => {
     counters: [0, 0],
   });
 
-  const wrapMutation =
-    <U extends any[]>(fn: (state: State, ...args: U) => State) =>
-    (...args: U) =>
-      setState(fn(state, ...args));
+  type WrapMutation = {
+    <U extends unknown[]>(fn: (state: State, ...args: U) => State): (...args: U) => void
+  };
+  const wrapMutation: WrapMutation = (fn) => (...args) => setState(fn(state, ...args))
 
   return [
     state,
